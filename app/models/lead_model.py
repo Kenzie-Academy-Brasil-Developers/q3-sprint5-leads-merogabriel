@@ -35,14 +35,14 @@ class Lead(db.Model):
 
     @classmethod
     def add_dates(cls, payload: dict):
-        payload['creation_date'] = datetime.now().strftime('%d/%m/%Y %H:%M:%S')
-        payload['last_visit'] = datetime.now().strftime('%d/%m/%Y %H:%M:%S')
+        payload['creation_date'] = datetime.now().strftime('%m/%d/%Y %H:%M:%S')
+        payload['last_visit'] = datetime.now().strftime('%m/%d/%Y %H:%M:%S')
 
         return payload
 
 
     def patch_visits(self):
         self.visits += 1
-        self.last_visit = datetime.now().strftime('%d/%m/%Y %H:%M:%S')
+        self.last_visit = datetime.now().strftime('%m/%d/%Y %H:%M:%S')
 
         return self

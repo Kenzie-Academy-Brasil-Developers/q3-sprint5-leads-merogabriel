@@ -1,5 +1,5 @@
 from flask import Blueprint
-from app.controllers import lead_controller
+from app.models import lead_controller
 
 bp = Blueprint("lead", __name__, url_prefix="/leads")
 
